@@ -1,0 +1,6 @@
+name: Geo Timezone
+type: module
+description: API that determines the timezone based on geo location (longitude/latitude).
+package: Location
+version: VERSION
+core: 8.x
