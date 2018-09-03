@@ -4,8 +4,8 @@
  * @file
  * API that determines the timezone based on geo location (longitude/latitude).
  * Using "geotimezone_query($latitude, $longitude, $format);" that returns
- * timezone name or offset (depends on $format value). This module does not need
- * web services, data files or SQL database. This is a Drupal version of
+ * timezone name or offset or bith (depends on $format value). This module does not
+ * need web services, data files or SQL database. This is a Drupal version of
  * LatLongToTimezone project (https://github.com/drtimcooper/LatLongToTimezone)
  *
  * @author Roland Michael dela Peña.
