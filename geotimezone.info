@@ -1,0 +1,9 @@
+name = Geo Timezone
+description = API that determines the timezone based on geo location (longitude/latitude)
+package = Location
+core = 7.x
+php = 5.4
+files[] = src/GeoTimezone.php
+files[] = src/Timezone.php
+files[] = src/TimezonePolygon.php
+files[] = geotimezone.module

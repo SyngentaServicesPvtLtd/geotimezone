@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * API that determines the timezone based on geo location (longitude/latitude).
+ * Using "geotimezone_query($latitude, $longitude, $format);" that returns
+ * timezone name or offset (depends on $format value). This module does not need
+ * web services, data files or SQL database. This is a Drupal version of
+ * LatLongToTimezone project (https://github.com/drtimcooper/LatLongToTimezone)
+ *
+ * @author Roland Michael dela Peña.
+ */
+
+
+/**
+ * Query timezone based on coordinates.
+ *
+ * @param float $latitude
+ *   Latitude.
+ * @param float $longitude
+ *   Longitude.
+ * @param string $format
+ *   Desired return timezone format: 'name', 'offset' or 'both'
+ * @return mixed
+ *   Query result contains timezone name or offset or both.
+ */
+function geotimezone_query($latitude, $longitude, $format = 'both') {
+  module_load_include('php', 'geotimezone', 'src/Timezone');
+  module_load_include('php', 'geotimezone', 'src/TimezonePolygon');
+  module_load_include('php', 'geotimezone', 'src/GeoTimezone');
+
+  $geotimezone = new \Drupal\geotimezone\GeoTimezone($latitude, $longitude);
+  if ($format == 'name') {
+    return $geotimezone->getName();
+  }
+  elseif ($format == 'offset') {
+    return $geotimezone->getOffset();
+  }
+  else {
+    return [
+      'name'   => $geotimezone->getName(),
+      'offset' => $geotimezone->getOffset(),
+    ];
+  }
+}
