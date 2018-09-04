@@ -1,4 +1,4 @@
-name: Geo Timezone
+name: Geo Time Zone
 type: module
 description: API that determines the timezone based on geo location (longitude/latitude).
 package: Location

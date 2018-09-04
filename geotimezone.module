@@ -25,10 +25,6 @@
  *   Query result contains timezone name or offset or both.
  */
 function geotimezone_query($latitude, $longitude, $format = 'both') {
-  module_load_include('php', 'geotimezone', 'src/Timezone');
-  module_load_include('php', 'geotimezone', 'src/TimezonePolygon');
-  module_load_include('php', 'geotimezone', 'src/GeoTimezone');
-
   $geotimezone = new \Drupal\geotimezone\GeoTimezone($latitude, $longitude);
   if ($format == 'name') {
     return $geotimezone->getName();
