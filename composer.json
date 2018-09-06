@@ -1,6 +1,6 @@
 {
   "name": "drupal/geotimezone",
-  "description": "API that determines the timezone based on geo location (longitude/latitude).",
+  "description": "API that determines the time zone based on geo location.",
   "type": "drupal-module",
   "repositories": [
     {
