@@ -70,7 +70,9 @@ function geotimezone_query($location, $format = 'both') {
       $geotimezone = new \Drupal\geotimezone\RegionTimezone($location);
     }
     else {
-      // TODO: Implement \Drupal\geotimezone\CountryTimezone
+      module_load_include('php', 'geotimezone', 'src/TimezoneInterface');
+      module_load_include('php', 'geotimezone', 'src/CountryTimezone');
+      $geotimezone = new \Drupal\geotimezone\CountryTimezone($location);
     }
   }
   if ($format == 'identifier') {

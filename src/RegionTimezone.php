@@ -14,11 +14,11 @@ namespace Drupal\geotimezone;
  */
 final class RegionTimezone implements TimezoneInterface {
   /**
-   * List of time zone based on region identifier.
+   * List of time zone based on region name.
    *
    * @var array $listIdentifier
    */
-  private static $listIdentifier;
+  private static $listName;
 
   /**
    * List of time zone based on region code.
@@ -54,17 +54,19 @@ final class RegionTimezone implements TimezoneInterface {
    */
   public function __construct($location) {
     if (isset($location['countryCode']) && !empty($location['countryCode'])) {
-      if (isset($location['region']) && !empty($location['region'])) {
-        static::$listIdentifier = $this->loadRegionNameList();
-        $this->identifier = static::$listIdentifier[$location['countryCode']][$location['region']];
-      }
-      elseif (isset($location['regionCode']) && !empty($location['regionCode'])) {
+      if (isset($location['regionCode']) && !empty($location['regionCode'])) {
         static::$listCode = $this->loadRegionCodeList();
-        $this->identifier = static::$listIdentifier[$location['countryCode']][$location['regionCode']];
+        $this->identifier = static::$listCode[$location['countryCode']][$location['regionCode']];
       }
-      // Convert to time zone offset
-      $time = new \DateTime('now', new \DateTimeZone($this->identifier));
-      $this->offset = $time->format('P');
+      elseif (isset($location['region']) && !empty($location['region'])) {
+        static::$listName = $this->loadRegionNameList();
+        $this->identifier = static::$listName[$location['countryCode']][$location['region']];
+      }
+      if (!empty($this->identifier)) {
+        // Convert to time zone offset
+        $time = new \DateTime('now', new \DateTimeZone($this->identifier));
+        $this->offset = $time->format('P');
+      }
     }
     else {
       $this->identifier = '';
