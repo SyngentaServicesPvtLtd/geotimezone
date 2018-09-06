@@ -17,7 +17,7 @@ interface TimezoneInterface {
    * Get the time zone identifier.
    *
    * @return string
-   *   Time zone identifier.
+   *   Time zone identifier. NULL if not found.
    */
   public function getIdentifier();
 
@@ -25,7 +25,7 @@ interface TimezoneInterface {
    * Get the time zone offset.
    *
    * @return string
-   *   Time zone offset.
+   *   Time zone offset. NULL if not found.
    */
   public function getOffset();
 }

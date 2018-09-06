@@ -69,8 +69,8 @@ final class RegionTimezone implements TimezoneInterface {
       }
     }
     else {
-      $this->identifier = '';
-      $this->offset     = '';
+      $this->identifier = NULL;
+      $this->offset     = NULL;
     }
   }
 
