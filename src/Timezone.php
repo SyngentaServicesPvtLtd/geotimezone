@@ -8,30 +8,30 @@
 namespace Drupal\geotimezone;
 
 /**
- * Holds the list of timezone names and offset.
+ * Holds the list of time zone names and offset.
  *
  * @package Drupal\geotimezone
  */
 final class Timezone {
   /**
-   * List of timezone names and offset.
+   * List of time zone names and offset.
    *
    * @var array $list
    */
   private static $list;
 
   /**
-   * Timezone list index.
+   * Time zone list index.
    *
    * @var int $index
    */
   private $index;
 
   /**
-   * Timezone constructor.
+   * Time zone constructor.
    *
    * @param int $index
-   *   Timezone list index.
+   *   Time zone list index.
    */
   public function __construct($index = 0) {
     $this->index = $index;
@@ -39,30 +39,30 @@ final class Timezone {
   }
 
   /**
-   * Get the timezone name.
+   * Get the time zone identifier.
    *
    * @return string
-   *   Timezone name.
+   *   Time zone identifier.
    */
   public function getName() {
     return static::$list[$this->index]['name'];
   }
 
   /**
-   * Get the timezone offset.
+   * Get the time zone offset.
    *
    * @return string
-   *   Timezone offset.
+   *   Time zone offset.
    */
   public function getOffset() {
     return static::$list[$this->index]['offset'];
   }
 
   /**
-   * Loads the list of timezone names and offset.
+   * Loads the list of time zone names and offset.
    *
    * @return array
-   *   List of timezone names and offset.
+   *   List of time zone identifiers and UTC/GMT offsets.
    */
   private function loadList() {
     return [

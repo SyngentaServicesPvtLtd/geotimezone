@@ -1,5 +1,5 @@
-name = Geo Timezone
-description = API that determines the timezone based on geo location (longitude/latitude)
+name = Geo Time Zone
+description = API that determines the time zone based on geo location
 package = Location
 core = 7.x
 php = 5.4
