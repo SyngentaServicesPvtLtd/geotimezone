@@ -72,8 +72,8 @@ final class Timezone implements TimezoneInterface {
   private function loadList() {
     return [
       0 => [
-        'identifier' => '',
-        'offset' => '',
+        'identifier' => NULL,
+        'offset' => NULL,
       ],
       1 => [
         'identifier' => 'America/Dominica',
