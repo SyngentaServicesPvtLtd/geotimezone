@@ -69,6 +69,7 @@ function geotimezone_query($location, $format = 'both') {
     }
   }
   else {
+    // No valid location fields present.
     return NULL;
   }
   if ($format == 'identifier') {
