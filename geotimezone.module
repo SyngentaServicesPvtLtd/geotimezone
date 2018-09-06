@@ -75,6 +75,10 @@ function geotimezone_query($location, $format = 'both') {
       $geotimezone = new \Drupal\geotimezone\CountryTimezone($location);
     }
   }
+  else {
+    // No valid location fields present.
+    return NULL; 
+  }
   if ($format == 'identifier') {
     return $geotimezone->getIdentifier();
   }
