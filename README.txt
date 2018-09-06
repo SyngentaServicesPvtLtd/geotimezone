@@ -17,7 +17,7 @@ If all keys are present, the coordinates (longitude/latitude) are the query's
 priority (the rest will be ignored). The region is the next query's priority
 if coordinates are not present. And the country is the last priority if
 coordinates and region are not present.
-It is recommend to provide coordinates for accurate time zone while region
+It is recommended to provide coordinates for accurate time zone while region
 is the next accurate and the least is the country where it may return
 multiple time zones in array.
 
