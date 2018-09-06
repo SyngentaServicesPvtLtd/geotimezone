@@ -2,27 +2,27 @@
 
 /**
  * @file
- * Contains \Drupal\geotimezone\GeoTimezoneMap.
+ * Contains \Drupal\geotimezone\GeoTimezone.
  */
 
 namespace Drupal\geotimezone;
 
 /**
- * Determine the timezone based on coordinates.
+ * Determine the time zone based on coordinates.
  *
  * @package Drupal\geotimezone
  */
-final class GeoTimezone {
+final class GeoTimezone implements TimezoneInterface {
 
   /**
-   * Timezone coordinates polygon.
+   * Time zone coordinates polygon.
    *
    * @var array $polygon
    */
   private static $polygon;
 
   /**
-   * Query result contains timezone name and offset.
+   * Query result contains time zone name and offset.
    *
    * @var \Drupal\geotimezone\Timezone $timezone
    */
@@ -69,20 +69,20 @@ final class GeoTimezone {
   }
 
   /**
-   * Get the timezone name.
+   * Get the time zone identifier.
    *
    * @return string
-   *   Timezone name.
+   *   Time zone identifier.
    */
-  public function getName() {
-    return $this->timezone->getName();
+  public function getIdentifier() {
+    return $this->timezone->getIdentifier();
   }
 
   /**
-   * Get the timezone offset.
+   * Get the time zone offset.
    *
    * @return string
-   *   Timezone offset.
+   *   Time zone offset.
    */
   public function getOffset() {
     return $this->timezone->getOffset();
