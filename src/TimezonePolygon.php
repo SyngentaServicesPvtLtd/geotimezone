@@ -8,7 +8,7 @@
 namespace Drupal\geotimezone;
 
 /**
- * Computes if given coordinates are inside the timezone polygon.
+ * Computes if given coordinates are inside the time zone polygon.
  *
  * @package Drupal\geotimezone
  */
