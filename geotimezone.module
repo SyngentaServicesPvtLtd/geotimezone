@@ -53,7 +53,8 @@
  * @param string $format
  *   Desired return time zone format: 'identifier', 'offset' or 'both'
  * @return mixed
- *   Query result contains time zone identifier or offset or both.
+ *   Query result contains time zone identifier or offset or both. NULL if not 
+ *   found or no valid location fields present
  */
 function geotimezone_query($location, $format = 'both') {
   if (isset($location['latitude']) && !empty($location['latitude']) && isset($location['longitude']) && !empty($location['longitude'])) {
