@@ -65,7 +65,7 @@ function geotimezone_query($location, $format = 'both') {
       $geotimezone = new \Drupal\geotimezone\RegionTimezone($location);
     }
     else {
-      // TODO: Implement \Drupal\geotimezone\CountryTimezone
+      $geotimezone = new \Drupal\geotimezone\CountryTimezone($location);
     }
   }
   if ($format == 'identifier') {

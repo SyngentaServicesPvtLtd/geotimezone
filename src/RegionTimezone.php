@@ -62,9 +62,11 @@ final class RegionTimezone implements TimezoneInterface {
         static::$listName = $this->loadRegionNameList();
         $this->identifier = static::$listName[$location['countryCode']][$location['region']];
       }
-      // Convert to time zone offset
-      $time = new \DateTime('now', new \DateTimeZone($this->identifier));
-      $this->offset = $time->format('P');
+      if (!empty($this->identifier)) {
+        // Convert to time zone offset
+        $time = new \DateTime('now', new \DateTimeZone($this->identifier));
+        $this->offset = $time->format('P');
+      }
     }
     else {
       $this->identifier = '';
