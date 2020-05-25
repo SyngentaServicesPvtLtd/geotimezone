@@ -1,6 +1,5 @@
 name: Geo Time Zone
 type: module
 description: API that determines the time zone based on geo location.
+core_version_requirement: ^8.7.7 || ^9
 package: Location
-version: VERSION
-core: 8.x
